@@ -1,0 +1,26 @@
+.options {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.button {
+  border-radius: 8px;
+  border: 1px solid black;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  padding: 10px 15px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  transition: background-color 250ms linear;
+}
+.button:hover {
+  border-color: #20269e;
+  background-color: rgba(203, 203, 203, 0.232);
+}
+.button:focus,
+.button:focus-visible {
+  outline: 4px auto #20269e;
+}
