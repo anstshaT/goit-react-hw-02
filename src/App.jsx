@@ -11,10 +11,17 @@ function App() {
     bad: 0,
   });
 
+  const updateFeedback = (feedbackType) => {
+    setFeedback((lastFeedback) => ({
+      ...lastFeedback,
+      [feedbackType]: lastFeedback[feedbackType] + 1,
+    }));
+  };
+
   return (
     <>
       <Description />
-      <Options />
+      <Options onOptions={updateFeedback} />
       <Feedback
         good={feedback.good}
         neutral={feedback.neutral}
