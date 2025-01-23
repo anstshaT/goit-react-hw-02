@@ -19,12 +19,24 @@ function App() {
     }));
   };
 
+  const resetFeedback = () => {
+    setFeedback(() => ({
+      good: 0,
+      neutral: 0,
+      bad: 0,
+    }));
+  };
+
   const totalFeedback = feedback.good + feedback.neutral + feedback.bad;
 
   return (
     <>
       <Description />
-      <Options onOptions={updateFeedback} />
+      <Options
+        onOptions={updateFeedback}
+        onReset={resetFeedback}
+        totalFeedback={totalFeedback}
+      />
       {totalFeedback >= 1 ? (
         <Feedback
           good={feedback.good}
