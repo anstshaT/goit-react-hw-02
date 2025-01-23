@@ -1,6 +1,6 @@
 import s from "./Feedback.module.css";
 
-const Feedback = ({ good, bad, neutral }) => {
+const Feedback = ({ good, bad, neutral, total, positive }) => {
   return (
     <div className={s.feedback}>
       <p className={s.feedbackText}>
@@ -11,6 +11,12 @@ const Feedback = ({ good, bad, neutral }) => {
       </p>
       <p className={s.feedbackText}>
         Bad: <span className={s.feedbackNumber}>{bad}</span>
+      </p>
+      <p className={s.feedbackText}>
+        Total: <span className={s.feedbackNumber}>{total}</span>
+      </p>
+      <p className={s.feedbackText}>
+        Positive: <span className={s.feedbackNumber}>{positive}%</span>
       </p>
     </div>
   );
